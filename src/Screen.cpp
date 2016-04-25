@@ -20,7 +20,7 @@ bool Screen::init() {
 	}
 
 	m_window = SDL_CreateWindow("Particle Fire Explosion",
-			SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH,
+	SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH,
 			SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
 
 	if (m_window == NULL) {
@@ -50,6 +50,10 @@ bool Screen::init() {
 	memset(m_buffer, 0, SCREEN_WIDTH * SCREEN_HEIGHT * sizeof(Uint32));
 
 	return true;
+}
+
+void Screen::clear() {
+	memset(m_buffer, 0, SCREEN_WIDTH * SCREEN_HEIGHT * sizeof(Uint32));
 }
 
 void Screen::setPixel(int x, int y, Uint8 red, Uint8 green, Uint8 blue) {

@@ -14,9 +14,13 @@ struct Particle {
 	double m_x;
 	double m_y;
 
+	double xspeed;
+	double yspeed;
+
 public:
 	Particle();
 	virtual ~Particle();
+	void update();
 };
 
 } /* namespace tom */
