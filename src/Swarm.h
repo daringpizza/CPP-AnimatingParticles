@@ -10,23 +10,24 @@
 
 #include "Particle.h"
 
-namespace tom {
+namespace caveofprogramming {
 
 class Swarm {
 public:
-	const static int NPARTICLES = 5000;
+	const static int NPARTICLES = 10000;
 
 private:
 	Particle * m_pParticles;
+	int lastTime;
 
 public:
 	Swarm();
 	virtual ~Swarm();
-	void update();
+	void update(int elapsed, int SpeedCounter, int DirectionCounter);
 
 	const Particle * const getParticles() { return m_pParticles; };
 };
 
-} /* namespace tom */
+} /* namespace caveofprogramming */
 
 #endif /* SWARM_H_ */

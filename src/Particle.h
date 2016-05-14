@@ -8,21 +8,31 @@
 #ifndef PARTICLE_H_
 #define PARTICLE_H_
 
-namespace tom {
+namespace caveofprogramming {
 
 struct Particle {
 	double m_x;
 	double m_y;
 
-	double xspeed;
-	double yspeed;
+
+private:
+	double m_speed;
+	double m_direction;
+	double m_spfactor;
+	double m_spincrement;
+	double m_dirfactor;
+	double m_dirincrement;
+	double m_sprand;
+private:
+	void init();
 
 public:
 	Particle();
 	virtual ~Particle();
-	void update();
+	void update(int interval, int SpeedCounter ,int DirectionCounter);
+
 };
 
-} /* namespace tom */
+} /* namespace caveofprogramming */
 
 #endif /* PARTICLE_H_ */

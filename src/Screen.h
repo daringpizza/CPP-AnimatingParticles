@@ -10,18 +10,21 @@
 
 #include <SDL.h>
 
-namespace tom {
+namespace caveofprogramming {
 
 class Screen {
 public:
 	const static int SCREEN_WIDTH = 800;
 	const static int SCREEN_HEIGHT = 600;
+	int m_spcounter;
+	int m_dircounter;
 
 private:
 	SDL_Window *m_window;
 	SDL_Renderer *m_renderer;
 	SDL_Texture *m_texture;
-	Uint32 *m_buffer;
+	Uint32 *m_buffer1;
+	Uint32 *m_buffer2;
 
 public:
 	Screen();
@@ -31,8 +34,9 @@ public:
 	bool processEvents();
 	void close();
 	void clear();
+	void boxBlur();
 };
 
-} /* namespace tom */
+} /* namespace caveofprogramming */
 
 #endif /* SCREEN_H_ */
